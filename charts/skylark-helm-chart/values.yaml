@@ -1,0 +1,179 @@
+# Default values for skylark-helm-chart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+
+image:
+  repository: skylark/production
+  tag: "2.21.17-3cbb1eb"
+  pullPolicy: IfNotPresent
+
+imageCredentials:
+  registry: registry.cn-hangzhou.aliyuncs.com
+  username: deploy-man@skylark
+  password: changeit
+  email: dev@byzan.team
+
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 3000
+
+resources: 
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+restartPolicy: Always
+
+volumeMounts: 
+  - mountPath: /var/www/skylark/log
+    name: skylark-log
+  - mountPath: /var/www/skylark/public/assets
+    name: skylark-assets
+  - mountPath: /var/www/skylark/public/packs
+    name: skylark-packs
+  - mountPath: /var/www/skylark/public/exportable_files
+    name: skylark-exportable-files
+  - mountPath: /var/www/skylark/public/uploads
+    name: skylark-uploads
+
+volumes: 
+  - name: skylark-log
+    hostPath: 
+      path: /opt/skylark/skylark-log
+      type: DirectoryOrCreate
+  - name: skylark-assets
+    hostPath: 
+      path: /opt/skylark/skylark-assets
+      type: DirectoryOrCreate
+  - name: skylark-packs
+    hostPath: 
+      path: /opt/skylark/skylark-packs
+      type: DirectoryOrCreate
+  - name: skylark-exportable-file
+    hostPath: 
+      path: /opt/skylark/skylark-exportable-file
+      type: DirectoryOrCreate
+  - name: skylark-uploads
+    hostPath: 
+      path: /opt/skylark/uploads
+      type: DirectoryOrCreate
+
+# Application
+slpHost: skylark.localhost
+slpTLSSecret:
+
+# skylark environment variable
+env: 
+  CABLE_REDIS_URL: redis://redis:6379/14
+  REDIS_HOST: redis
+  REDIS_PORT: "6379"
+  CHEWY_HOST: elasticsearch:9200
+  NODE_ENV: production
+  POSTGRES_HOST: postgres-postgresql-helm-chart
+  POSTGRES_PASSWORD: "123456"
+  POSTGRES_POOL: "128"
+  POSTGRES_USER: postgres
+  DISABLE_DATABASE_ENVIRONMENT_CHECK: "1"
+  PUMA_MAX_RAM: "5000"
+  PUMA_MAX_THREADS: "32"
+  PUMA_PORT: "3000"
+  PUMA_WEB_CONCURRENCY: "2"
+  PUMA_WEB_WORKER_TIMEOUT: "60"
+  RAILS_CACHE_STORE_URL: memcached:11211
+  RAILS_ENV: production
+  RAILS_HEADER_X_FRAME_OPTIONS: SAMEORIGIN
+  RAILS_LOG_LEVEL: info
+  RAILS_SERVE_STATIC_FILES: "true"
+  SASS_BINARY_SITE: https://npm.taobao.org/mirrors/node-sass/
+  SECRET_KEY_BASE: d061dcb4fd4ffc4f3063834879620754cf2110716d0694835c93d3b52cc44e2f3eac5ced27be9c600d1a6408bfd47204f7bc3204f1c6d64dc1313b437005c097
+  SETTING_ALIYUN_ACCESS_KEY_ID: ""
+  SETTING_ALIYUN_ACCESS_KEY_SECRET: ""
+  SETTING_ALIYUN_CALLED_SHOW_NUMBER: ""
+  SETTING_ALIYUN_IP_LIMIT_PER_DAY: "5"
+  SETTING_ALIYUN_SMS_SIGN_NAME: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_MESSAGE_INVOLVED: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_MESSAGE_UNREAD: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_MESSAGE_UNREAD_WITH_URL: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_SUBSCRIPTION_BUNCH: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_SUBSCRIPTION_COMMENT: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_SUBSCRIPTION_ORGANIZATION_APPLICATION: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_SUBSCRIPTION_RESPONSE_CREATED: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_SUBSCRIPTION_RESPONSE_UPDATED: ""
+  SETTING_ALIYUN_SMS_TEMPLATE_CODE_VERIFY_CODE: ""
+  SETTING_ALIYUN_SMS_WITH_PRODUCT_VAR: ""
+  SETTING_ALIYUN_TTS_CODES_COMMENT: ""
+  SETTING_ALIYUN_TTS_CODES_MESSAGE: ""
+  SETTING_ALIYUN_TTS_CODES_ORGANIZATION_APPLICATION: ""
+  SETTING_ALIYUN_TTS_CODES_RESPONSE_CREATED: ""
+  SETTING_ALIYUN_TTS_CODES_RESPONSE_UPDATED: ""
+  SETTING_AMAP_JS_KEY: ""
+  SETTING_AMAP_WEB_KEY: ""
+  SETTING_APP_ASSET_HOST: ""
+  SETTING_APP_BEIAN_CODE: ""
+  SETTING_APP_CMS_CACHE_EXPIRED_HOURS: "12"
+  SETTING_APP_DEFAULT_SITE_NAME: Skylark
+  SETTING_APP_DOMAIN: https://skylarkly.com
+  SETTING_APP_IP: ""
+  SETTING_APP_MAX_SIDEKIQ_USAGE: "50"
+  SETTING_APP_SENTRY_DSN: ""
+  SETTING_APP_SENTRY_RUBY_DSN: ""
+  SETTING_APP_SMS_PRIVODER: ""
+  SETTING_APP_SMS_SERVICE: ""
+  SETTING_APP_WELCOME_PAGE: ""
+  SETTING_ATTACHMENTS_DOWNLOAD_EXPIRED_MINUTES: "10"
+  SETTING_CHUANGLI_APPID: ""
+  SETTING_CHUANGLI_SECRET: ""
+  SETTING_DATAOS_DOMAIN: ""
+  SETTING_DATAOS_ENABLE: ""
+  SETTING_DATAOS_KEY: ""
+  SETTING_DATAOS_NAMESPACE_ID: ""
+  SETTING_EXPORTABLE_FILE_EXPIRED_MINUTES: "10"
+  SETTING_EXPORTABLE_FILE_MAX_CELLS: "100"
+  SETTING_GXCLOUD_ENABLE: ""
+  SETTING_JUHE_API_BASE: http://v.juhe.cn/calendar/year
+  SETTING_JUHE_KEY: ""
+  SETTING_JWT_LAS_VEGAS: ""
+  SETTING_MEMBER_ASYNC_IMPORT_MIN: "100"
+  SETTING_QINIU_ACCESS_KEY: ""
+  SETTING_QINIU_ATTACHMENT_BUCKET: ""
+  SETTING_QINIU_ATTACHMENT_DOMAIN: ""
+  SETTING_QINIU_ATTACHMENT_SIZE: "10"
+  SETTING_QINIU_BUCKET: ""
+  SETTING_QINIU_DOMAIN: ""
+  SETTING_QINIU_EXPORTABLE_FILE_BUCKET: ""
+  SETTING_QINIU_EXPORTABLE_FILE_DOMAIN: ""
+  SETTING_QINIU_MATERIAL_IMAGE_BUCKET: ""
+  SETTING_QINIU_MATERIAL_IMAGE_DOMAIN: ""
+  SETTING_QINIU_MATERIAL_IMAGE_SIZE: "10"
+  SETTING_QINIU_SECRET_KEY: ""
+  SETTING_QINIU_UPLOAD_URL: ""
+  SETTING_RESPONSE_ASYNC_EXPORT_MIN: "100"
+  SETTING_RESPONSE_ASYNC_IMPORT_MIN: "100"
+  SETTING_RESPONSE_FILE_EXPIRED_MINUTES: "10"
+  SETTING_ROOT_IDS: ""
+  SETTING_TABLE_MAPPER_MAPPER_URL: ""
+  SETTING_TABLE_MAPPER_RESET_URL: ""
+  SETTING_WECHAT_COMPONENT_APPID: ""
+  SETTING_WECHAT_COMPONENT_APPSECRET: ""
+  SETTING_WECHAT_COMPONENT_AUTHORIZATION_CALLBACK_URL: ""
+  SETTING_WECHAT_COMPONENT_ENCODING_AES_YEY: ""
+  SETTING_WECHAT_COMPONENT_TOKEN: ""
+  SIDEKIQ_CONCURRENCY: "20"
+  SKYLIGHT_AUTHENTICATION: ""
+  SKYLIGHT_ENABLED: "false"
+  SKYLIGHT_ENV: production
