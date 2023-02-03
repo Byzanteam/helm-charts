@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "skylark-helm-chart.fullname" . }}
+  labels:
+    {{- include "skylark-helm-chart.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+      name: {{ include "skylark-helm-chart.fullname" . }}
+  selector:
+    {{- include "skylark-helm-chart.selectorLabels" . | nindent 4 }}

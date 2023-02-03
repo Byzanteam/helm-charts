@@ -1,0 +1,55 @@
+{{/* Middlewares for web ingress-routes */}}
+{{- $webMiddlewares := list }}
+{{- $webMiddlewares = append $webMiddlewares "compress" }}
+{{- if .Values.slpTLSSecret | empty | not }}
+{{- $webMiddlewares = append $webMiddlewares "redirect-to-https" }}
+{{- end }}
+
+{{/* Middlewares for websecure ingress-routes */}}
+{{- $websecureMiddlewares := list }}
+{{- $websecureMiddlewares = append $websecureMiddlewares "compress" }}
+{{- $websecureMiddlewares = append $wesecurebMiddlewares "server-headers" }}
+
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "skylark-helm-chart.fullname" . }}-web
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: HOST(`{{ .Values.slpHost }}`)
+      kind: Rule
+      services:
+        - name: {{ include "skylark-helm-chart.fullname" $ }}
+          port: {{ include "skylark-helm-chart.fullname" $ }}
+          passHostHeader: true
+      middlewares:
+        {{- range $webMiddlewares }}
+        - name: {{ include "skylark-helm-chart.fullname" $ }}-{{ . }}
+        {{- end}}
+
+---
+
+{{- if .Values.slpTLSSecret | empty | not }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ include "skylark-helm-chart.fullname" . }}-websecure
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: HOST(`{{ .Values.slpHost }}`)
+      kind: Rule
+      services:
+        - name: {{ include "skylark-helm-chart.fullname" $ }}
+          passHostHeader: true
+          port: {{ include "skylark-helm-chart.fullname" $ }}
+      middlewares:
+        {{- range $websecureMiddlewares }}
+        - name: {{ include "skylark-helm-chart.fullname" $ }}-{{ . }}
+        {{- end}}
+  tls:
+    secretName: {{ include "skylark-helm-chart.fullname" $ }}-tls-secret
+{{- end }}
