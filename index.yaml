@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  jet-factory-chart:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-02-03T16:55:39.968147+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 8179d2ffe7da9bcc79a27ff83530b8f595eb1563b91dc6c7e200079a2f65b035
+    name: jet-factory-chart
+    type: application
+    urls:
+    - https://Byzanteam.github.io/helm-charts/charts/jet-factory-chart-1.0.0.tgz
+    version: 1.0.0
+  skylark-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-02-03T16:55:39.969077+08:00"
+    description: A Helm chart for Kubernetes
+    digest: 6c130ee849d04b1c077d959ae508d0a5e2a12f443ddd04dca82a1c77d908da97
+    name: skylark-helm-chart
+    type: application
+    urls:
+    - https://Byzanteam.github.io/helm-charts/charts/skylark-helm-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-03T16:55:39.966744+08:00"
