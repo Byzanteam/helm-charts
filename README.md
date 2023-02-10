@@ -6,6 +6,7 @@ Welcome to byzanteam helm chart repository!
 
 - Skylark
 - Jet Factory
+- Application-template
 
 ## Usage
 
@@ -25,7 +26,7 @@ Helm's [documentation](https://helm.sh/docs) to get started.
 
 ## To install the <chart-name> chart:
 
-    helm install my-<chart-name> Byzanteam/<chart-name>
+    helm install my-<chart-name> Byzanteam/helm-charts
 
 ## To uninstall the chart:
 
