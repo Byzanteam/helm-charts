@@ -16,6 +16,7 @@ jobs:
         with:
           repository: byzanteam/application-chart-template
           ref: 'feat/yangke/app-temp'
+          token: '${{ secrets.CR_TOKEN }}'
 
       - name: Configure Git
         run: |
