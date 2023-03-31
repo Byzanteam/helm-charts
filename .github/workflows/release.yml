@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: byzanteam/application-chart-template
-          ref: 'feat/yangke/app-temp'
+          ref: 'main'
           token: '${{ secrets.CR_TOKEN }}'
 
       - name: Configure Git
