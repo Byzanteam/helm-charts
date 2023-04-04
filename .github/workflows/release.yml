@@ -17,6 +17,7 @@ jobs:
           repository: byzanteam/application-chart-template
           ref: 'main'
           token: '${{ secrets.CR_TOKEN }}'
+          fetch-depth: 0
 
       - name: Configure Git
         run: |
