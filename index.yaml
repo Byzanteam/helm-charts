@@ -3,10 +3,7 @@ entries:
   application-chart-template:
   - apiVersion: v2
     appVersion: 1.0.0
-<<<<<<< HEAD
-    created: "2023-04-20T14:30:28.414254+08:00"
-=======
-    created: "2023-05-18T11:33:59.352488+08:00"
+    created: "2023-08-23T14:43:48.257531+08:00"
     description: A Helm chart template for byzanteam application
     digest: 77acf23e51e64a0a80a4c473dfa4b58a270245f15231558031a7bc6f2ce3720b
     maintainers:
@@ -21,19 +18,15 @@ entries:
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-05-18T11:33:59.354651+08:00"
->>>>>>> gh-pages
+    created: "2023-08-23T14:43:48.258054+08:00"
     description: A Helm chart template for byzanteam application
     digest: f5cc8d7f3a4a146ef0187ab0912ccecf92f01a1bbc724897911f91caab47f962
     maintainers:
     - email: yangke@jet.work
       name: YangKe
     name: application-chart-template
-<<<<<<< HEAD
-=======
     sources:
     - https://github.com/Byzanteam/application-chart-template/
->>>>>>> gh-pages
     type: application
     urls:
     - app-temp/application-chart-template-1.0.9.tgz
@@ -41,11 +34,7 @@ entries:
   jet-factory-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-<<<<<<< HEAD
-    created: "2023-04-20T14:30:28.416394+08:00"
-=======
-    created: "2023-05-18T11:33:59.358796+08:00"
->>>>>>> gh-pages
+    created: "2023-08-23T14:43:48.258568+08:00"
     description: A Helm chart for Kubernetes
     digest: 731afeedb04e7784ae94d368b512bf3af200ca906e2f893745944ad8817408fc
     name: jet-factory-chart
@@ -55,12 +44,23 @@ entries:
     version: 1.0.0
   skylark-helm-chart:
   - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-08-23T14:43:48.259961+08:00"
+    description: A Helm chart for Kubernetes
+    digest: b66711e08417b7b1d2b573646d4723b8728488b9e8e792166c0c410ce5c86f19
+    maintainers:
+    - email: yangke@jet.work
+      name: YangKe
+    name: skylark-helm-chart
+    sources:
+    - https://github.com/Byzanteam/skylark-helm-chart/
+    type: application
+    urls:
+    - skylark/skylark-helm-chart-1.1.1.tgz
+    version: 1.1.1
+  - apiVersion: v2
     appVersion: 2.21.17
-<<<<<<< HEAD
-    created: "2023-04-20T14:30:28.418297+08:00"
-=======
-    created: "2023-05-18T11:33:59.362447+08:00"
->>>>>>> gh-pages
+    created: "2023-08-23T14:43:48.259177+08:00"
     description: A Helm chart for Kubernetes
     digest: 2d61bd8e0cdb0bb48e96460e339d630cb8b6f44486949576c8315e67fd638591
     name: skylark-helm-chart
@@ -68,8 +68,4 @@ entries:
     urls:
     - skylark/skylark-helm-chart-1.1.0.tgz
     version: 1.1.0
-<<<<<<< HEAD
-generated: "2023-04-20T14:30:28.411994+08:00"
-=======
-generated: "2023-05-18T11:33:59.35044+08:00"
->>>>>>> gh-pages
+generated: "2023-08-23T14:43:48.254962+08:00"
