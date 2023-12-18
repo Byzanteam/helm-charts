@@ -3,7 +3,7 @@ entries:
   application-chart-template:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-10-24T10:41:30.079009+08:00"
+    created: "2023-12-18T16:47:57.696959+08:00"
     description: A Helm chart template for byzanteam application
     digest: 039d205102804babb9a0133328d0ce8f3993a55a8c12cc2d5ce431d64ac97d3b
     maintainers:
@@ -18,7 +18,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-10-24T10:41:30.077731+08:00"
+    created: "2023-12-18T16:47:57.695712+08:00"
     description: A Helm chart template for byzanteam application
     digest: 77acf23e51e64a0a80a4c473dfa4b58a270245f15231558031a7bc6f2ce3720b
     maintainers:
@@ -33,7 +33,7 @@ entries:
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-10-24T10:41:30.078353+08:00"
+    created: "2023-12-18T16:47:57.696345+08:00"
     description: A Helm chart template for byzanteam application
     digest: f5cc8d7f3a4a146ef0187ab0912ccecf92f01a1bbc724897911f91caab47f962
     maintainers:
@@ -49,7 +49,7 @@ entries:
   jet-factory-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2023-10-24T10:41:30.079638+08:00"
+    created: "2023-12-18T16:47:57.697412+08:00"
     description: A Helm chart for Kubernetes
     digest: 731afeedb04e7784ae94d368b512bf3af200ca906e2f893745944ad8817408fc
     name: jet-factory-chart
@@ -57,10 +57,37 @@ entries:
     urls:
     - jet/jet-factory-chart-1.0.0.tgz
     version: 1.0.0
+  jet-helm-chart:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-12-18T16:47:57.704778+08:00"
+    dependencies:
+    - alias: projectmandb
+      condition: projectmandb.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.5.7
+    - alias: dynamicdb
+      condition: dynamicdb.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.5.7
+    description: A jet helm chart
+    digest: 337813435c7f7bbef98bf7bf4e687825f8bf4e06da10c6704ae883bd58b97b7f
+    maintainers:
+    - email: yangke@jet.work
+      name: YangKe
+    name: jet-helm-chart
+    sources:
+    - https://github.com/Byzanteam/jet-helm-chart
+    type: application
+    urls:
+    - jet/jet-helm-chart-0.2.0.tgz
+    version: 0.2.0
   skylark-helm-chart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-24T10:41:30.081901+08:00"
+    created: "2023-12-18T16:47:57.706621+08:00"
     description: A Helm chart for Kubernetes
     digest: b66711e08417b7b1d2b573646d4723b8728488b9e8e792166c0c410ce5c86f19
     maintainers:
@@ -75,7 +102,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.21.17
-    created: "2023-10-24T10:41:30.080702+08:00"
+    created: "2023-12-18T16:47:57.705746+08:00"
     description: A Helm chart for Kubernetes
     digest: 2d61bd8e0cdb0bb48e96460e339d630cb8b6f44486949576c8315e67fd638591
     name: skylark-helm-chart
@@ -83,4 +110,4 @@ entries:
     urls:
     - skylark/skylark-helm-chart-1.1.0.tgz
     version: 1.1.0
-generated: "2023-10-24T10:41:30.075655+08:00"
+generated: "2023-12-18T16:47:57.694644+08:00"
