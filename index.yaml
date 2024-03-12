@@ -3,9 +3,9 @@ entries:
   application-chart-template:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.056719+08:00"
+    created: "2024-03-12T17:33:53.53416+08:00"
     description: A Helm chart template for byzanteam application
-    digest: 5a04265ce4344db87510bd83da9691fb27b7420ab094504bc1b4c1450569d472
+    digest: 4dfa631c7b363a3ba4dd2408e171ce04e60f185344dcb525c2adfe4d3643864a
     maintainers:
     - email: yangke@jet.work
       name: YangKe
@@ -18,7 +18,7 @@ entries:
     version: 1.4.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.055853+08:00"
+    created: "2024-03-12T17:33:53.53372+08:00"
     description: A Helm chart template for byzanteam application
     digest: 6b120498f7c7e79f3857b3450ed1899fcebcac4782440fffec5e7e9817017ade
     maintainers:
@@ -33,7 +33,7 @@ entries:
     version: 1.3.1
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.055317+08:00"
+    created: "2024-03-12T17:33:53.533094+08:00"
     description: A Helm chart template for byzanteam application
     digest: aa68b7cff13b70e1245264cb5b49ca1888894ed006c1c507dbc17e2e77916be9
     maintainers:
@@ -48,7 +48,7 @@ entries:
     version: 1.3.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.054398+08:00"
+    created: "2024-03-12T17:33:53.532563+08:00"
     description: A Helm chart template for byzanteam application
     digest: f0f7e7a8dc1f764b1602491267a7c172c665116bdc1a698f47cb8bf459679db8
     maintainers:
@@ -63,7 +63,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.053715+08:00"
+    created: "2024-03-12T17:33:53.53201+08:00"
     description: A Helm chart template for byzanteam application
     digest: 80e64245bd905dd46bf03d10f497beac3212bc971b64190327736e0b48001ab0
     maintainers:
@@ -78,7 +78,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.052346+08:00"
+    created: "2024-03-12T17:33:53.531101+08:00"
     description: A Helm chart template for byzanteam application
     digest: 77acf23e51e64a0a80a4c473dfa4b58a270245f15231558031a7bc6f2ce3720b
     maintainers:
@@ -93,7 +93,7 @@ entries:
     version: 1.0.10
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.052951+08:00"
+    created: "2024-03-12T17:33:53.531528+08:00"
     description: A Helm chart template for byzanteam application
     digest: f5cc8d7f3a4a146ef0187ab0912ccecf92f01a1bbc724897911f91caab47f962
     maintainers:
@@ -109,7 +109,7 @@ entries:
   jet-factory-chart:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2024-03-11T10:13:05.05735+08:00"
+    created: "2024-03-12T17:33:53.534603+08:00"
     description: A Helm chart for Kubernetes
     digest: 731afeedb04e7784ae94d368b512bf3af200ca906e2f893745944ad8817408fc
     name: jet-factory-chart
@@ -120,7 +120,7 @@ entries:
   jet-helm-chart:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-03-11T10:13:05.079216+08:00"
+    created: "2024-03-12T17:33:53.549932+08:00"
     dependencies:
     - alias: projectmandb
       condition: projectmandb.enabled
@@ -146,7 +146,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-03-11T10:13:05.074267+08:00"
+    created: "2024-03-12T17:33:53.544884+08:00"
     dependencies:
     - alias: projectmandb
       condition: projectmandb.enabled
@@ -172,7 +172,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2024-03-11T10:13:05.065829+08:00"
+    created: "2024-03-12T17:33:53.541227+08:00"
     dependencies:
     - alias: projectmandb
       condition: projectmandb.enabled
@@ -199,7 +199,7 @@ entries:
   skylark-helm-chart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-03-11T10:13:05.081209+08:00"
+    created: "2024-03-12T17:33:53.551527+08:00"
     description: A Helm chart for Kubernetes
     digest: b66711e08417b7b1d2b573646d4723b8728488b9e8e792166c0c410ce5c86f19
     maintainers:
@@ -214,7 +214,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.21.17
-    created: "2024-03-11T10:13:05.080214+08:00"
+    created: "2024-03-12T17:33:53.550768+08:00"
     description: A Helm chart for Kubernetes
     digest: 2d61bd8e0cdb0bb48e96460e339d630cb8b6f44486949576c8315e67fd638591
     name: skylark-helm-chart
@@ -222,4 +222,4 @@ entries:
     urls:
     - skylark/skylark-helm-chart-1.1.0.tgz
     version: 1.1.0
-generated: "2024-03-11T10:13:05.050511+08:00"
+generated: "2024-03-12T17:33:53.529187+08:00"
